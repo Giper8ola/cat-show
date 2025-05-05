@@ -1,10 +1,5 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import styles from '../assets/css/example.module.css';
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-
-    </div>
-  );
+	return <div className={styles.page}></div>;
 }
