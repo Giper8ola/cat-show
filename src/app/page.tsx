@@ -1,5 +1,14 @@
-import styles from '../assets/css/example.module.css';
+import { API_URL } from '@/consts';
 
-export default function Home() {
-	return <div className={styles.page}></div>;
+import ClientApp from '../components/ClientApp';
+
+async function getCatUrl(): Promise<string> {
+	const res = await fetch(API_URL);
+	const data: Array<{ url: string }> = await res.json();
+	return data[0]?.url || '';
+}
+
+export default async function Page() {
+	const initialUrl = await getCatUrl();
+	return <ClientApp initialUrl={initialUrl} />;
 }
