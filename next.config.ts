@@ -7,7 +7,9 @@ const nextConfig: NextConfig = {
 			level: 'error'
 		};
 		return config;
-	}
+	},
+	output: 'export',
+	basePath: process.env.PAGES_BASE_PATH ?? '/'
 };
 
 export default nextConfig;
